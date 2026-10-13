@@ -37,13 +37,11 @@ RUN zypper --non-interactive install -y -l  emacs-nox gdb
 RUN zypper --non-interactive install python313-pip
 RUN pip3 install git+https://github.com/linkchecker/linkchecker.git
 
-# setup gcc13 as default
-#RUN ln -sf /usr/bin/g++-13 /usr/bin/g++
-#RUN ln -sf /usr/bin/gcc-13 /usr/bin/gcc
-
 # unuran (for EcoLab)
-RUN tar zxvf /root/unuran-1.11.0.tar.gz
-RUN (cd unuran-1.11.0; ./configure --enable-shared --libdir=/usr/local/lib64; make install)
+#RUN tar zxvf /root/unuran-1.11.0.tar.gz
+#RUN (cd unuran-1.11.0; ./configure --enable-shared --libdir=/usr/local/lib64; make install)
 
 # install claude
-npm install -g @anthropic-ai/claude-code
+RUN npm install -g @anthropic-ai/claude-code
+ENV CLAUDE_PERMISSION_MODE=bypassPermissions
+ENV CLAUDE_PERMISSION_PROMPTS=none
