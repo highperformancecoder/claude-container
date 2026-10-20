@@ -3,7 +3,7 @@ ADD . /root
 #RUN zypper dup -y -l
 RUN zypper addrepo https://download.opensuse.org/repositories/home:hpcoder1/16.0/home:hpcoder1.repo
 RUN zypper --gpg-auto-import-keys refresh
-RUN zypper --non-interactive install -y -l git make ccache clang libomp-devel tcl-devel tk-devel libdb-4_8-devel gsl-devel cairo-devel pango-devel readline-devel gdbm-devel libXss-devel unittest++-devel libxml2-devel libtiff-devel libopenssl-devel soci-devel gtest gmock gzip
+RUN zypper --non-interactive install -y -l git make ccache clang libomp-devel tcl-devel tk-devel libdb-4_8-devel gsl-devel cairo-devel pango-devel readline-devel gdbm-devel libXss-devel unittest++-devel libxml2-devel libtiff-devel libopenssl-devel soci-devel gtest gmock gzip libstdc++6-devel-gcc16
 # Boost
 RUN zypper --non-interactive install -y -l libboost_headers-devel libboost_thread-devel libboost_date_time-devel libboost_filesystem-devel libboost_program_options-devel libboost_regex-devel libboost_system-devel libboost_python3-devel
 
