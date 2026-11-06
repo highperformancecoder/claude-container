@@ -24,9 +24,16 @@ make -j4 install
 popd
 
 # libsodium
-git clone --branch=stable https://github.com/jedisct1/libsodium.git
 pushd libsodium
 emconfigure ./configure --enable-minimal --disable-shared --prefix=/usr/emscripten
+emmake make -j4
+emmake make install
+popd
+
+# gsl
+pushd gsl
+autoreconf -i
+emconfigure ./configure --prefix=/usr/emscripten --disable-shared
 emmake make -j4
 emmake make install
 popd

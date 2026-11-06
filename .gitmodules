@@ -4,3 +4,9 @@
 [submodule "soci"]
 	path = soci
 	url = https://github.com/SOCI/soci.git
+[submodule "gsl"]
+	path = gsl
+	url = https://github.com/ampl/gsl.git
+[submodule "libsodium"]
+	path = libsodium
+	url = https://github.com/jedisct1/libsodium.git
