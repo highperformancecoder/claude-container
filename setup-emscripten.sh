@@ -9,8 +9,7 @@ popd
 
 pushd /tmp
 # boost 
-tar jxvf /root/boost*.tar.bz2
-pushd boost*
+pushd boost
 ./bootstrap.sh
 ./b2 --prefix=/usr/emscripten -j4 --without-python toolset=emscripten stage
 mkdir -p /usr/emscripten/lib /usr/emscripten/include
@@ -19,8 +18,7 @@ cp -r boost /usr/emscripten/include
 popd
 
 # soci
-tar xvf /root/soci*.tar.gz
-pushd soci*
+pushd soci
 emcmake cmake . -DCMAKE_INSTALL_PREFIX=/usr/emscripten -DSOCI_CXX11=on -DSOCI_TESTS=off
 make -j4 install
 popd

@@ -1,0 +1,6 @@
+[submodule "boost"]
+	path = boost
+	url = https://github.com/boostorg/boost.git
+[submodule "soci"]
+	path = soci
+	url = https://github.com/SOCI/soci.git
